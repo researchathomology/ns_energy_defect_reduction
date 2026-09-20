@@ -68,10 +68,14 @@ a finite window, at fixed viscosity, beyond what viscosity removes. A
 positive defect implies blowup and so a negative answer to statement (B);
 the converse is not known, and the target is at least as strong as the
 problem it addresses. The paper proves the target equivalent to a floor on
-the energy transfer to fine scales, averaged over the window; states
+the energy flux through the Littlewood-Paley shells --- the Fourier-side
+form of the coarse-grained flux $\Pi_\ell$ of the Onsager theory of
+turbulence --- averaged over the window; states
 necessary conditions on a candidate --- a singular time of Type~II in
 velocity, energy concentrating on a set of zero length, a pressure outside
-$L^2$, an obstruction to collapse onto a fixed steady Euler profile; and
+$L^2$, a velocity outside the Onsager-critical class $L^3_t
+B^{1/3}_{3,c_0}$, an obstruction to collapse onto a fixed steady Euler
+profile; and
 states what cannot certify one
 --- no finite computation witnesses a Galerkin-uniform ceiling, and
 selection and forcing return the question to a positive defect. The
@@ -177,8 +181,17 @@ For $0 \leq w_0 < w$ set
 \end{equation}
 This is the energy lost on the window beyond what viscosity removes: zero
 for a strong solution, nonnegative for an LH solution when $w_0$ is a
-good time in the sense above, the inertial dissipation of
-\cite{DucRob00} at fixed $\nu$. It is not the
+good time in the sense above. It is the total mass on $\T^3 \times
+(w_0,w]$ of the inertial dissipation distribution $D(u)$ of Duchon and
+Robert \cite{DucRob00} at fixed $\nu$, the object through which the
+mathematical literature relates the loss of energy of a weak solution to
+its regularity, measured in Besov spaces: $D(u)$ vanishes, for Euler and
+for Navier-Stokes alike, when $u \in L^3_t B^{1/3}_{3,c_0}$
+\cite{DucRob00,CheConFriShv08,CheFriShv10}, sharpening the H\"older
+threshold $1/3$ of Onsager \cite{Ons49,Eyi94,ConETit94}, below which
+dissipative Euler solutions exist \cite{Ise18,BucDeLSzeVic19}.
+Sec.~\ref{sec:reduction} states the floors of this paper in that language.
+The defect is not the
 zeroth law of turbulence, which concerns dissipation surviving as $\nu
 \to 0$ along a family of solutions.
 
@@ -266,6 +279,34 @@ so that $\frac{d}{dt} E_{\leq j} = -\Pi_j - \nu \|\nabla \PP_{\leq j}
 u\|^2$; the sign is fixed by this balance.\footnote{This is the convention
 of \cite{Shv10}; \cite{CheConFriShv08} take the opposite sign.}
 
+\paragraph*{The Same Objects in Standard Language}
+
+The shells are the dyadic blocks of Littlewood-Paley theory, with a
+sharp Fourier cutoff in place of the usual smooth one, and $\Delta_j$ is
+the corresponding block: the Besov norm $\|u\|_{B^s_{p,q}}$ is the
+$\ell^q$ norm of the sequence $2^{js}\|\Delta_j u\|_{L^p}$, and
+$B^s_{p,c_0}$ is the subspace on which that sequence tends to zero. The
+sharp cutoff costs nothing here, since only $L^2$ quantities enter, and
+it is what makes $\PP_{\leq j}u$ a finite-mode test field in the proof of
+Lemma~\ref{sec:reduction}.1. The flux $\Pi_j$ is the Fourier-side form
+of the coarse-grained flux of the Onsager theory of turbulence
+\cite{Eyi94,ConETit94,DucRob00}. There one averages over the length
+scales $\ell$ and finer by mollifying, $u_\ell = \varphi_\ell * u$, and
+the balance for the resolved energy $\frac12|u_\ell|^2$ carries the flux
+through scale $\ell$, $\Pi_\ell = -\nabla u_\ell : \tau_\ell$, with
+$\tau_\ell = (u \otimes u)_\ell - u_\ell \otimes u_\ell$ the subscale
+stress; integrated over $\T^3$ it is $\langle \varphi_\ell * u_\ell,\,
+u\cdot\nabla u\rangle$. Replacing the mollifier by the projector
+$\PP_{\leq j}$, for which $\PP_{\leq j}^2 = \PP_{\leq j}$, at $\ell \sim
+2^{-j}$ turns this into (\ref{eq:flux}) exactly. Lemma~\ref{sec:reduction}.1
+below is the Duchon-Robert balance integrated over space, and its limit
+$j \to \infty$ is the statement that $D(u)$ has total mass $\A(w_0,w)$
+on the window, Proposition~1 of \cite{DucRob00} without its
+localization in space; the localized form is used in
+Sec.~\ref{sec:produce}. The floors stated after the lemma are, in this
+language, lower bounds on $\Pi_\ell$ uniform in $\ell$ below some
+$\ell_0$, pointwise in time or averaged over the window.
+
 \begin{list}{}{\leftmargin=\parindent\rightmargin=0pt}
 \item
 \textbf{Lemma \ref{sec:reduction}.1 (Shell balance)}
@@ -346,6 +387,40 @@ No estimate on the nonlinearity is used. Sufficient conditions for energy
 equality in terms of vanishing shell flux are in \cite{CheConFriShv08}
 for Euler and \cite{CheFriShv10,Shv10} for Navier-Stokes; the converse
 required for the equivalence is not in them.
+
+\paragraph*{The Floors as Roughness}
+
+In the language of Sec.~\ref{sec:setting} the floors are a statement
+about the regularity of the flow. The estimate of \cite{CheConFriShv08},
+transferred to Navier-Stokes in \cite{CheFriShv10,Shv10}, gives
+$\int_{w_0}^{w}\Pi_j\,dt \to 0$ whenever $u \in L^3(w_0,w;
+B^{1/3}_{3,c_0})$, so that class admits no averaged floor, and by
+Theorem~\ref{sec:reduction}.2(a) a positive defect on the window forces
+$u \notin L^3(w_0,w; B^{1/3}_{3,c_0})$ (from the literature, not
+formalized). A candidate is therefore Onsager-critical or rougher on the
+window, over and above the $L^2_t H^1_x$ regularity the LH class
+provides; the uniform-in-$j$ floor says that the finest scales carry
+flux that does not decay, which is what roughness at the exponent $1/3$
+means. The converse --- a floor from roughness alone --- is not in the
+literature and is not claimed; the equivalence of
+Theorem~\ref{sec:reduction}.2 is with the defect, not with a regularity
+class.
+
+What the Onsager theory has proved bears on the plausibility of the
+target and not on the problem itself. For Euler, energy is conserved
+above the exponent $1/3$ \cite{ConETit94,CheConFriShv08} and
+dissipative H\"older solutions exist below it \cite{Ise18,BucDeLSzeVic19}.
+For Navier-Stokes the results concern the inviscid limit: Besov
+regularity above $1/3$, uniform in $\nu$, excludes anomalous dissipation
+of a family of Leray solutions as $\nu \to 0$ \cite{DriEyi19}, and forced
+families whose dissipation stays bounded below uniformly in $\nu$ have
+been constructed \cite{BruDeL23,BruColCriDeLSor23}. These are statements
+about the zeroth law distinguished in Sec.~\ref{sec:setting}, a limit
+along a family, and the constructed members are forced and smooth at
+each fixed $\nu$, so their defect vanishes; whether one LH solution at
+one fixed $\nu$ has $D(u) \neq 0$ is question~(a) of \cite{DucRob00} and
+is unchanged by them. The floors of this section are the fixed-$\nu$
+Littlewood-Paley form of that question.
 
 \section{What a Positive Defect Must Produce}
 \label{sec:produce}
@@ -484,8 +559,10 @@ singularity of Navier-Stokes on $\T^3$ at fixed viscosity: blowup of
 Type~II in velocity, and in gradient rate if the jump has an atomic part;
 a fixed amount of $L^2$ energy concentrating onto a set of zero length as
 $t \uparrow T^*$, some point of which carries local energy exceeding every
-multiple of its radius; and a pressure outside $L^2$ on every terminal
-interval. These conditions are necessary, not sufficient.
+multiple of its radius; a pressure outside $L^2$ on every terminal
+interval; and, by Sec.~\ref{sec:reduction}, a velocity outside the
+Onsager-critical class $L^3_t B^{1/3}_{3,c_0}$ on the window. These
+conditions are necessary, not sufficient.
 
 \paragraph*{A Designed Model Without a Defect}
 
@@ -587,7 +664,10 @@ The averaged floor requires two things of the energy transfer at once.
 The transfer must persist in time: it must stay above a fixed level
 across a window of positive length, not merely at a single instant. And
 it must persist in scale: the same level, with the same constant, at
-every scale finer than some fixed one, however fine. The first
+every scale finer than some fixed one, however fine --- in the
+coarse-graining language of Sec.~\ref{sec:reduction}, a floor on the
+flux $\Pi_\ell$ through every length scale $\ell$ below some $\ell_0$,
+not only through those a given resolution resolves. The first
 requirement is that the cascade be sustained, the second that it continue to
 arbitrarily fine scales.
 
@@ -676,6 +756,10 @@ search that approaches those questions through a positive defect.
 
 \section{Acknowledgements}
 
+The authors thank Abdul Hasib Rahimyar for his reading of the paper and
+his comments, which prompted the passages relating the shells and the
+flux to Littlewood-Paley theory, coarse-graining and the Onsager theory
+of turbulence in Secs.~\ref{sec:setting} and \ref{sec:reduction}.
 The machine verification, the archived computations, and the reduction
 reported here were carried out with the assistance of an AI research
 agent; every Lean declaration compiles independently of that assistance
