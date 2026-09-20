@@ -283,12 +283,16 @@ of \cite{Shv10}; \cite{CheConFriShv08} take the opposite sign.}
 
 The shells are the dyadic blocks of Littlewood-Paley theory, with a
 sharp Fourier cutoff in place of the usual smooth one, and $\Delta_j$ is
-the corresponding block: the Besov norm $\|u\|_{B^s_{p,q}}$ is the
-$\ell^q$ norm of the sequence $2^{js}\|\Delta_j u\|_{L^p}$, and
-$B^s_{p,c_0}$ is the subspace on which that sequence tends to zero. The
-sharp cutoff costs nothing here, since only $L^2$ quantities enter, and
-it is what makes $\PP_{\leq j}u$ a finite-mode test field in the proof of
-Lemma~\ref{sec:reduction}.1. The flux $\Pi_j$ is the Fourier-side form
+the corresponding block. With the smooth blocks $\Delta^{\rm sm}_j$ the
+Besov norm $\|u\|_{B^s_{p,q}}$ is the $\ell^q$ norm of the sequence
+$2^{js}\|\Delta^{\rm sm}_j u\|_{L^p}$, and $B^s_{p,c_0}$ is the subspace
+on which that sequence tends to zero; the sharp blocks give the same
+norm for $p = 2$ and not for $p \neq 2$, where the sharp projector is
+unbounded on $L^p$. The sharp cutoff costs nothing here, since only
+$L^2$ quantities enter Lemma~\ref{sec:reduction}.1 and
+Theorem~\ref{sec:reduction}.2, and it is what makes $\PP_{\leq j}u$ a
+finite-mode test field in the proof of the lemma; the Besov classes
+named in this paper are the standard ones, defined by the smooth blocks. The flux $\Pi_j$ is the Fourier-side form
 of the coarse-grained flux of the Onsager theory of turbulence
 \cite{Eyi94,ConETit94,DucRob00}. There one averages over the length
 scales $\ell$ and finer by mollifying, $u_\ell = \varphi_\ell * u$, and
@@ -299,10 +303,11 @@ stress; integrated over $\T^3$ it is $\langle \varphi_\ell * u_\ell,\,
 u\cdot\nabla u\rangle$. Replacing the mollifier by the projector
 $\PP_{\leq j}$, for which $\PP_{\leq j}^2 = \PP_{\leq j}$, at $\ell \sim
 2^{-j}$ turns this into (\ref{eq:flux}) exactly. Lemma~\ref{sec:reduction}.1
-below is the Duchon-Robert balance integrated over space, and its limit
-$j \to \infty$ is the statement that $D(u)$ has total mass $\A(w_0,w)$
-on the window, Proposition~1 of \cite{DucRob00} without its
-localization in space; the localized form is used in
+below is the sharp-cutoff form of the Duchon-Robert balance integrated
+over space, and its limit $j \to \infty$ is the statement that $D(u)$
+has total mass $\A(w_0,w)$ on the window, Proposition~1 of
+\cite{DucRob00} without its localization in space --- the filter differs,
+the limit does not; the localized form is used in
 Sec.~\ref{sec:produce}. The floors stated after the lemma are, in this
 language, lower bounds on $\Pi_\ell$ uniform in $\ell$ below some
 $\ell_0$, pointwise in time or averaged over the window.
@@ -391,12 +396,13 @@ required for the equivalence is not in them.
 \paragraph*{The Floors as Roughness}
 
 In the language of Sec.~\ref{sec:setting} the floors are a statement
-about the regularity of the flow. The estimate of \cite{CheConFriShv08},
-transferred to Navier-Stokes in \cite{CheFriShv10,Shv10}, gives
-$\int_{w_0}^{w}\Pi_j\,dt \to 0$ whenever $u \in L^3(w_0,w;
-B^{1/3}_{3,c_0})$, so that class admits no averaged floor, and by
-Theorem~\ref{sec:reduction}.2(a) a positive defect on the window forces
-$u \notin L^3(w_0,w; B^{1/3}_{3,c_0})$ (from the literature, not
+about the regularity of the flow. Energy equality holds on the window
+whenever $u \in L^3(w_0,w; B^{1/3}_{3,c_0})$ \cite{CheFriShv10,Shv10},
+the Navier-Stokes form of the estimate of \cite{CheConFriShv08}, so
+$\A(w_0,w) = 0$ on that class and, by Lemma~\ref{sec:reduction}.1,
+$\int_{w_0}^{w}\Pi_j\,dt \to 0$: the class admits no averaged floor, and
+by Theorem~\ref{sec:reduction}.2(a) a positive defect on the window
+forces $u \notin L^3(w_0,w; B^{1/3}_{3,c_0})$ (from the literature, not
 formalized). A candidate is therefore Onsager-critical or rougher on the
 window, over and above the $L^2_t H^1_x$ regularity the LH class
 provides; the uniform-in-$j$ floor says that the finest scales carry
@@ -414,7 +420,7 @@ For Navier-Stokes the results concern the inviscid limit: Besov
 regularity above $1/3$, uniform in $\nu$, excludes anomalous dissipation
 of a family of Leray solutions as $\nu \to 0$ \cite{DriEyi19}, and forced
 families whose dissipation stays bounded below uniformly in $\nu$ have
-been constructed \cite{BruDeL23,BruColCriDeLSor23}. These are statements
+been constructed \cite{BruDeL23,BruColCriDeLSor24}. These are statements
 about the zeroth law distinguished in Sec.~\ref{sec:setting}, a limit
 along a family, and the constructed members are forced and smooth at
 each fixed $\nu$, so their defect vanishes; whether one LH solution at
