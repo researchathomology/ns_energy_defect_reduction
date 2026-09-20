@@ -1,0 +1,12 @@
+NS_ENERGY_DEFECT_REDUCTION
+Copyright 2026 Jarret Petrillo and James Glimm
+
+Lean 4 library: Apache License 2.0 (LICENSE).
+Paper (reduction.tex, reduction.bib, reduction.pdf):
+Creative Commons Attribution 4.0 International (LICENSE-PAPER).
+
+This library depends on Mathlib (https://github.com/leanprover-community/mathlib4),
+Apache License 2.0, and on Lean 4 (https://github.com/leanprover/lean4),
+Apache License 2.0. The machine verification was carried out with the
+assistance of an AI research agent; every declaration compiles
+independently of that assistance.
